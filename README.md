@@ -26,7 +26,10 @@ Perform load testing on all three databases using sysbench. This step helps furt
 Expand the `docker-compose.yml` file to include configurations for Prometheus, Grafana, and the mysqld-exporter.
 
 1. Launch Grafana, and configure it to use Prometheus as the data source.
-2. Add panels to visualize various metrics of the MySQL cluster.
+2. Add panels to visualize various metrics of the MySQL cluster.  
+  
+![Grafana Dashboard](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-1.png "Grafana Dashboard")  
+
 
 ## Additional Notes
 
