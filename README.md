@@ -29,7 +29,7 @@ Expand the `docker-compose.yml` file to include configurations for Prometheus, G
 2. Add panels to visualize various metrics of the MySQL cluster.  
   
 ![Grafana Dashboard](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-1.png "Grafana Dashboard")  
-
+[panel-1](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-1.png) | [panel-2](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-2.png) | [panel-3](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-3.png) | [panel-4](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-4.png) | [panel-5](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-5.png) | [panel-6](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-6.png)  
 
 ## Additional Notes
 
