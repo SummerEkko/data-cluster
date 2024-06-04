@@ -29,4 +29,4 @@ Expand the `docker-compose.yml` file to include configurations for Prometheus, G
 ## Additional Notes
 
 - Make sure to expose the necessary ports for MySQL, Prometheus, and Grafana in the Docker configurations to allow proper connectivity.
-- Adjust the configurations according to your local development environment needs.
+- With the release of MySQL 8.4, any code involving the terms 'master' and 'slave' has been changed. Be aware of these changes if you are using the new version of MySQL.
