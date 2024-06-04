@@ -14,6 +14,9 @@ The `docker-compose.yml` file is configured with one master and two slave MySQL 
 
 1. Access each of the slave databases and connect them to the master database.
 2. Use the command `SHOW SLAVE STATUS\G` to verify that each slave is successfully connected to the master.
+[status-master](https://github.com/SummerEkko/data-cluster/blob/main/media/status-master.png)  
+[status-slave-1](https://github.com/SummerEkko/data-cluster/blob/main/media/status-slave-1.png)  
+[status-slave-2](https://github.com/SummerEkko/data-cluster/blob/main/media/status-slave-2.png)  
 
 ### Step 3: Load Testing
 
