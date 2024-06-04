@@ -35,7 +35,6 @@ Expand the `docker-compose.yml` file to include configurations for Prometheus, G
 ![Grafana Dashboard](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-5.png "Grafana Dashboard 5")  
 ![Grafana Dashboard](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-6.png "Grafana Dashboard 6")  
   
-[panel-1](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-1.png) | [panel-2](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-2.png) | [panel-3](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-3.png) | [panel-4](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-4.png) | [panel-5](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-5.png) | [panel-6](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-6.png)  
 
 ## Additional Notes
 
