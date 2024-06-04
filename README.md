@@ -8,7 +8,7 @@ This project deploys a MySQL cluster using Docker containers, consisting of one 
 
 ### Step 1: Configure Docker Containers
 
-The `docker-compose.yml` file is configured with one master and two slave MySQL instances. Ensure each instance is properly set up with the correct environment variables and configurations.
+The `docker-compose.yml` file is configured with one master and two slave MySQL instances.
 
 ### Step 2: Initialize Master-Slave Replication
 
@@ -28,7 +28,13 @@ Expand the `docker-compose.yml` file to include configurations for Prometheus, G
 1. Launch Grafana, and configure it to use Prometheus as the data source.
 2. Add panels to visualize various metrics of the MySQL cluster.  
   
-![Grafana Dashboard](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-1.png "Grafana Dashboard")  
+![Grafana Dashboard](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-1.png "Grafana Dashboard 1")  
+![Grafana Dashboard](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-2.png "Grafana Dashboard 2")  
+![Grafana Dashboard](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-3.png "Grafana Dashboard 3")  
+![Grafana Dashboard](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-4.png "Grafana Dashboard 4")  
+![Grafana Dashboard](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-5.png "Grafana Dashboard 5")  
+![Grafana Dashboard](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-6.png "Grafana Dashboard 6")  
+  
 [panel-1](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-1.png) | [panel-2](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-2.png) | [panel-3](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-3.png) | [panel-4](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-4.png) | [panel-5](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-5.png) | [panel-6](https://github.com/SummerEkko/data-cluster/blob/main/media/panel-6.png)  
 
 ## Additional Notes
