@@ -1,0 +1,94 @@
+version: '3.1'
+
+services:
+  master:
+    image: mysql:5.7
+    container_name: mysql-master
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_REPLICATION_USER: repluser
+      MYSQL_REPLICATION_PASSWORD: replpass
+      MYSQL_DATABASE: mydatabase
+    ports:
+      - "3310:3306"
+    volumes:
+      - master-data:/var/lib/mysql
+    command: --server-id=1 --log-bin=mysql-bin --binlog-do-db=mydatabase
+
+  slave1:
+    image: mysql:5.7
+    container_name: mysql-slave1
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_REPLICATION_USER: repluser
+      MYSQL_REPLICATION_PASSWORD: replpass
+    ports:
+      - "3311:3306"
+    volumes:
+      - slave1-data:/var/lib/mysql
+    depends_on:
+      - master
+    command: --server-id=2 --relay-log=mysql-relay-bin --log-bin=mysql-bin --read-only=1 --replicate-do-db=mydatabase
+
+  slave2:
+    image: mysql:5.7
+    container_name: mysql-slave2
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_REPLICATION_USER: repluser
+      MYSQL_REPLICATION_PASSWORD: replpass
+    ports:
+      - "3312:3306"
+    volumes:
+      - slave2-data:/var/lib/mysql
+    depends_on:
+      - master
+    command: --server-id=3 --relay-log=mysql-relay-bin --log-bin=mysql-bin --read-only=1 --replicate-do-db=mydatabase
+
+  # Prometheus
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    depends_on:
+      - mysqld-exporter
+
+  #MySQL Exporter
+  mysqld-exporter:
+    image: prom/mysqld-exporter
+    container_name: mysqld-exporter
+    restart: unless-stopped
+    command:
+      - "--web.listen-address=:9104"
+      # - "--mysqld.username=${MYSQL_REPLICATION_USER}:${MYSQL_REPLICATION_PASSWORD}"
+      # - "--mysqld.username=user:password"
+      - "--mysqld.username=repluser:replpass"
+      - "--mysqld.address=mysql-master:3306"
+    ports:
+      - "9104:9104"
+    depends_on:
+      - master
+
+
+  # Grafana
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+
+volumes:
+  master-data:
+  slave1-data:
+  slave2-data:
+  prometheus-data:
+  mysqld-exporter:
+  grafana-storage:
