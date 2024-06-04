@@ -1,4 +1,4 @@
-# MySQL Cluster with Docker
+# Database Cluster with MySQL & Docker
 
 ## Project Overview
 
